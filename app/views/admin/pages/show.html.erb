@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<% @title = @page.title %>
+<div>
+<%=raw @page.data %>
+</div>
+<p>
+<%= link_to 'Edit', edit_admin_page_path(@page) %> |
+<%= link_to 'Back', admin_pages_path %>
+</p>

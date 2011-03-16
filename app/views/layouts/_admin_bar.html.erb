@@ -1,0 +1,7 @@
+<div id='admin-bar'>
+  <a href="/admin">Admin</a> | 
+<% if params[:controller] == "page" && @page %>
+  <a href="/admin/pages/<%= @page.id %>/edit">Edit</a> | 
+<% end %>
+  <a href="/logout">Logout</a>
+</div>

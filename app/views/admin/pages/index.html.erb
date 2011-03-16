@@ -1,0 +1,21 @@
+<h1>Listing pages</h1>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>actions</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.name %></td>
+    <td><%= link_to 'Show', [:admin, page] %> |
+        <%= link_to 'Edit', edit_admin_page_path(page) %> |
+        <%= link_to 'Destroy', [:admin, page], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_admin_page_path %>

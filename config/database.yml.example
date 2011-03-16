@@ -1,0 +1,18 @@
+# Switch to whichever DB you'd like to use.
+development:
+  adapter: postgresql
+  database: hydra_dev
+  username: username
+  password: password
+
+test:
+  adapter: postgresql
+  database: hydra_test
+  username: username
+  password: password
+  
+production:
+  adapter: postgresql
+  database: hydra_prod
+  username: username
+  password: password

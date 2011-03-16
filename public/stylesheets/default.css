@@ -1,0 +1,14 @@
+#admin-bar{
+  background-color:yellow;
+  padding:3px;
+  text-align:right;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+#main-content{
+  padding:10px;
+}

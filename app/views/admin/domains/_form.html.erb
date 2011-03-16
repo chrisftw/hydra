@@ -1,0 +1,24 @@
+<%= form_for([:admin, @domain]) do |f| %>
+  <% if @domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+
+      <ul>
+      <% @domain.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :site_id, :value => "Site" %><br />
+    <%= f.select :site_id, options_for_select(@site_select, @domain.site_id) %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

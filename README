@@ -1,0 +1,17 @@
+Hydra is a multi-headed Content Management System.
+
+A CMS on rails is sometimes overkill for small sites with little traffic, but
+maybe the features of rails are still desirable.  However putting up 10 separate
+instances of an app for your 10 small sites is impractical.
+
+Hydra runs multiple site CMS from one instance.  Like the mythical Hydra, it is
+a multi-headed monster that delivers content for multiple sites.
+
+Designed for multiple contributors for each domain.
+
+It is still in alpha stage.
+
+Upcoming features:
+  Better Security
+  Upload Manager
+  Prettier Default Layout

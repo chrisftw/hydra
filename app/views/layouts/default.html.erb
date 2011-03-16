@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% if !$site.favicon.blank? %>
+  <link rel="icon" href="<%= $site.favicon %>">
+  <% end %>
+  <title><%= @title + ' ~ ' unless @title.blank? %><%#= $site.title %></title>
+  <%= stylesheet_link_tag 'default' %>
+  <%= stylesheet_link_tag $site.layout %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <%= javascript_include_tag 'rails', 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <% if is_site_admin? %>
+    <%= render :partial => "layouts/admin_bar" %>
+  <% end %>
+  <% if params[:controller] == "page" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% end %>
+  <div id="main-content">
+    <%= yield %>
+  </div>
+</body>
+</html>

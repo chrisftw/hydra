@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @domain.name %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @domain.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_domain_path(@domain) %> |
+<%= link_to 'Back', admin_domains_path %>
