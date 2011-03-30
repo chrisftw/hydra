@@ -8,5 +8,5 @@
 
 site = Site.create(:name => "Default", :layout => 'default')
 domain = Domain.create(:name => "localhost", :site_id => site.id)
-user = User.create(:email => "chris@chrisreister.com", :password => "change0", :password_confirmation => "change0", :username => "chris", :permission_mask => 127)
+user = User.create(:email => "chris@chrisreister.com", :password => "change0", :password_confirmation => "change0", :username => "chris", :permission_mask => 255)
 

@@ -4,7 +4,7 @@ class CreateSites < ActiveRecord::Migration
       t.string :name
       t.boolean :active, :default => true
       t.string :layout, :default => "default"
-      t.string :sites, :favicon, :default => "/images/fav-hydra.png"
+      t.string :favicon, :default => "/images/fav-hydra.png"
       t.string :title
       t.timestamps
     end

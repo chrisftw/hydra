@@ -6,8 +6,8 @@ class GatherSite
   def call(env)
     request = Rack::Request.new(env)
     domain_name = request.env["SERVER_NAME"]
-    @site = Site.current(domain_name)
-    request.session["site"] = @site
+    site = Site.current(domain_name)
+    request.session["site"] = site
     @status, @headers, @response = @app.call(env)
     return [@status, @headers, self]
   end

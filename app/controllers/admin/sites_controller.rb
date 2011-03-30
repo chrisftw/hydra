@@ -42,6 +42,7 @@ class Admin::SitesController < ApplicationController
   # POST /sites
   # POST /sites.xml
   def create
+    params[:site][:name] = params[:site][:name].downcase
     @site = Site.new(params[:site])
 
     respond_to do |format|
@@ -58,6 +59,7 @@ class Admin::SitesController < ApplicationController
   # PUT /sites/1
   # PUT /sites/1.xml
   def update
+    params[:site][:name] = params[:site][:name].downcase
     @site = Site.find(params[:id])
 
     respond_to do |format|

@@ -2,11 +2,8 @@ class PageController < ApplicationController
   layout :get_layout
   
   def index
-    puts "CONTROLLER PARAMS= #{params.inspect}"
     @page = Page.get_page(params[:page])
     @title = @page.title if @page
-    puts "IN SHOW!!!"
-    puts @page.inspect
     render :action => :error if @page.nil?
   end
   
