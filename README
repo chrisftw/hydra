@@ -11,7 +11,12 @@ Designed for multiple contributors for each domain.
 
 It is still in alpha stage.
 
+This is the branch with a Postgres backend.
+Postgres version will not have forms working for a while.
+
 Upcoming features:
+  Custom Forms
   Better Security
+  User Editor
   Upload Manager
   Prettier Default Layout
