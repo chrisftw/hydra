@@ -16,9 +16,25 @@ describe Domain do
     Domain.delete_all
   end
   
-  it "should find a site" do
-    @site = Domain.find_site("example.com")
-    @site.name.should == "Test Site 1"
+  it "should set domain names correctly" do
+    dom = Domain.new(:name => "ChrisReister.COM")
+    dom.name.should == "chrisreister.com"
+  end
+  
+  it "should create a backup hash" do
+    hash = @dom1.to_backup_hash
+    hash["name"].should == "localhost"
+    hash["site_id"].should == nil
+    hash["id"].should == nil
+  end
+  
+  it "should create a domain from a hash" do
+    site = Site.create(:name => "onionsoup")
+    backup_hash = {:name => "buzzy_bee", :data => "The Bee Buzzes"} 
+    page = Page.from_backup_hash(backup_hash, site.id)
+    site.pages.length.should == 1
+    page.id.should_not == nil
+    page.site.should == site
   end
   
 end

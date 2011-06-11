@@ -32,6 +32,27 @@ class User < ActiveRecord::Base
     self.all_sites.collect{ |s| [s.name, s.id]}
   end
   
+  def to_backup_hash
+    backup_hash = {}
+    col_names = User.column_names - ["id"]
+    col_names.each { |col| backup_hash[col] = self.send(col.to_sym ) }
+    backup_hash
+  end
+  
+  def self.from_backup_hash(backup_hash, site_id)
+    user = User.new(backup_hash)
+    user.permission_mask = backup_hash["permission_mask"]
+    user.password = "fakepassword"
+    if user.save
+      user.encrypted_password = backup_hash["encrypted_password"]
+      user.save
+      SiteUser.create(:site_id => site_id, :user_id => user.id)
+      return user
+    else
+      raise RuntimeError, "Unable to read/save User #{user.inspect}\n#{user.errors}"
+    end
+  end
+  
   private
   def permission_mask_flag(flag)
     return (permission_mask & flag) == flag

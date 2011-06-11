@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe SiteUser do
-  pending "add some examples to (or delete) #{__FILE__}"
+  pending "not sure any tests are need for this yet."
 end

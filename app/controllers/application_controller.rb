@@ -38,6 +38,7 @@ class ApplicationController < ActionController::Base
   
   private
   def set_uber_page_site
+    puts "SETTING $site"
     $site = session["site"]
   end
   

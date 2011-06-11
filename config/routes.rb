@@ -5,6 +5,10 @@ Hydra::Application.routes.draw do
     resources :sites
     resources :pages
   end
+  get "admin/documents" => "admin/documents#index"
+  post "admin/documents/mkdir" => "admin/documents#mkdir"
+  post "admin/documents/delete" => "admin/documents#delete"
+  post "admin/documents/upload" => "admin/documents#upload"
 
   get "page/index"
 

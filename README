@@ -7,13 +7,13 @@ instances of an app for your 10 small sites is impractical.
 Hydra runs multiple site CMS from one instance.  Like the mythical Hydra, it is
 a multi-headed monster that delivers content for multiple sites.
 
-Designed for multiple contributors for each domain.
+Hydra is designed for multiple contributors for each domain.
 
-It is still in alpha stage.
+It is still in alpha stage, but I expect beta soon.
 
 Upcoming features:
   Custom Forms
   Better Security
   User Editor
-  Upload Manager
+  Upload Manager/Document Manager
   Prettier Default Layout

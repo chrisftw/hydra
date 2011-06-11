@@ -6,15 +6,9 @@
   <%= stylesheet_link_tag $site.layout %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
   <script src="/javascripts/rails.js"></script>
-  <script src="/javascripts/application.js"></script>
   <% if is_site_admin? %>
     <script src="/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript">
-      
-      $().ready(function() {
-        
-      });
-    </script>
+    <script src="/javascripts/admin.js"></script>
   <% end %>
   <%= csrf_meta_tag %>
 </head>
@@ -26,7 +20,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <% end %>
-  <div id="main-content">
+  <div id="main-content">...
     <%= yield %>
   </div>
 </body>

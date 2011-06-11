@@ -3,7 +3,7 @@ class CreateSiteUsers < ActiveRecord::Migration
     create_table :site_users do |t|
       t.integer :site_id
       t.integer :user_id
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end

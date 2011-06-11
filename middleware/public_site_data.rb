@@ -12,6 +12,8 @@ class PublicSiteData
     path = Rack::Utils.unescape(env["PATH_INFO"])
     if path != "/" && File.exists?("#{Rails.root}/sites/#{site_name}#{path}")
       return Rack::File.new("sites/#{site_name}").call(env)
+    elsif path != "/" && File.exists?("#{Rails.root}/hydra#{path}")
+      return Rack::File.new("hydra").call(env)
     end
     @status, @headers, @response = @app.call(env)
     return [@status, @headers, self]
